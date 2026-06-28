@@ -21,6 +21,18 @@ internet connection required to render.
 `index.html` is the homepage. All navigation between pages uses relative links
 (e.g. `vendors.html`), so the folder works as-is when served from any directory.
 
+## Responsive design (three intentional layouts)
+
+- **Desktop (≥1024px):** the original multi-column layout.
+- **Tablet (768–1023px):** 3- and 4-column grids collapse to 2 columns; navigation is a
+  hamburger menu.
+- **Mobile (<768px):** single-column, mobile-first. The hero photo moves above the
+  headline, cards stack full-width, primary buttons go full-width, and the navigation
+  opens a full-screen slide-over menu (☰). No horizontal scrolling at 320/375/390/414px.
+
+The menu is pure CSS/HTML (a hidden checkbox toggles the slide-over), so it works without
+any JavaScript framework.
+
 ## Deploying
 
 This is a plain static site. Upload the contents of this folder to any static host:
@@ -30,20 +42,20 @@ This is a plain static site. Upload the contents of this folder to any static ho
 - **Cloudflare Pages / GitHub Pages** — push the folder to a repo and point the host at it
 - **Any web server / S3 bucket** — copy the files to the web root
 
-To preview locally, just open `index.html` in a browser, or run a simple server:
+To preview locally, open `index.html` in a browser, or run a simple server:
 
 ```
 python3 -m http.server
 ```
 
-## What's included / inlined
+## What's inlined
 
 - Fonts (Young Serif + Hanken Grotesk) — embedded, so the site does not call Google Fonts
 - All photography, logos, and the location map — embedded as data URIs
 - All styles and scripts — embedded
 
-Because everything is inlined, image-heavy pages (`vendors.html`, `index.html`) are a
-few MB each. That is expected and is the tradeoff for true single-file portability.
+Because everything is inlined, image-heavy pages (`vendors.html`, `index.html`) are a few
+MB each. That is expected and is the tradeoff for true single-file portability.
 
 ## Interactive features (run client-side, no backend)
 
@@ -51,6 +63,7 @@ few MB each. That is expected and is the tradeoff for true single-file portabili
 - "What's in season" season switcher (`this-week.html`)
 - Events category filter (`events.html`)
 - Vendor FAQ accordion (`become-a-vendor.html`)
+- Mobile hamburger / slide-over navigation (all pages)
 - Newsletter and contact forms — these show a success state but **do not send data**.
   Wire them to a form handler (Netlify Forms, Formspree, an email endpoint, etc.) before
   going live.
