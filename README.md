@@ -60,7 +60,7 @@ MB each. That is expected and is the tradeoff for true single-file portability.
 ## Interactive features (run client-side, no backend)
 
 - Vendor directory search + category filters (`vendors.html`)
-- "What's in season" season switcher (`this-week.html`)
+- Seasonal hours, location and messaging from `season-config.js` (all pages; see `SEASONAL-MAINTENANCE.md`)
 - Events category filter (`events.html`)
 - Vendor FAQ accordion (`become-a-vendor.html`)
 - Mobile hamburger / slide-over navigation (all pages)
@@ -75,9 +75,6 @@ MB each. That is expected and is the tradeoff for true single-file portability.
   timeline, and vendor stall fees are illustrative placeholders — confirm real numbers.
 - **Vendor details:** vendor towns and short descriptions were inferred from the supplied
   photos; give them an accuracy pass.
-- **"In season" lists** are set for the current Ontario season and should be refreshed as
-  the season changes.
+- **Seasonal information** lives in `season-config.js`. See `SEASONAL-MAINTENANCE.md`.
 - **Forms** need a backend/handler (see above).
-- Hours, locations, and contact email reflect the information provided:
-  Summer (May 2–Oct 31, Sat 8 AM–1 PM, Rotary Harbourfront Park) and
-  Winter (Nov 7–Dec 19, Sat 9 AM–Noon, Market Square), cobourgfarmersmarket@gmail.com.
+- The contact email is cobourgfarmersmarket@gmail.com.
